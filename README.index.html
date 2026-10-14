@@ -1,0 +1,189 @@
+# Tipos-de-Bases-de-Datos
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Datos en Bases de Datos</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .intro-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--card-bg);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background-color: #f1f5f9;
+        }
+
+        code {
+            background-color: #e2e8f0;
+            color: #d63384;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.95em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #718096;
+            font-size: 0.9rem;
+            margin-top: 50px;
+            border-top: 1px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Tipos de Datos en Bases de Datos</h1>
+        <p>Guía esencial de estructuras de almacenamiento en sistemas gestores de bases de datos (SGBD)</p>
+    </header>
+
+    <div class="container">
+        <div class="intro-card">
+            <h2>¿Qué son los tipos de datos?</h2>
+            <p>En una base de datos relacional, cada columna de una tabla requiere un tipo de dato definido. Este tipo de dato actúa como una restricción que asegura la integridad de la información, determinando qué valores se pueden almacenar (números, textos, fechas, etc.) y optimizando el espacio de almacenamiento.</p>
+        </div>
+
+        <h2>Tipos de Datos Principales</h2>
+        
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo de Dato</th>
+                        <th>Categoría</th>
+                        <th>Descripción</th>
+                        <th>Ejemplos de Valores</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>INT</code></td>
+                        <td>Numérico Entero</td>
+                        <td>Almacena números enteros sin parte decimal, tanto positivos como negativos.</td>
+                        <td><code>10</code>, <code>-450</code>, <code>2026</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>VARCHAR(n)</code></td>
+                        <td>Cadena de Caracteres</td>
+                        <td>Texto de longitud variable hasta un límite máximo especificado (<code>n</code>). Eficiente en espacio.</td>
+                        <td><code>'Alejandro'</code>, <code>'contacto@email.com'</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>DECIMAL / NUMERIC</code></td>
+                        <td>Numérico Exacto</td>
+                        <td>Números con precisión fija y parte fraccionaria. Indispensable para valores monetarios.</td>
+                        <td><code>99.99</code>, <code>15000.50</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>DATE / DATETIME</code></td>
+                        <td>Fecha y Hora</td>
+                        <td>Almacena fechas del calendario o combinaciones precisas de fecha y hora exacta.</td>
+                        <td><code>2026-06-07</code>, <code>2026-06-07 15:30:00</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>BOOLEAN</code></td>
+                        <td>Lógico</td>
+                        <td>Maneja valores de verdadero o falso. Dependiendo del motor, puede representarse como 1/0.</td>
+                        <td><code>TRUE</code>, <code>FALSE</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>TEXT</code></td>
+                        <td>Texto Largo</td>
+                        <td>Diseñado para almacenar cadenas de texto de gran tamaño, como artículos o descripciones extensas.</td>
+                        <td>Contenido de publicaciones de un blog, comentarios largos.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>Página creada para el repositorio de GitHub Pages &copy; 2026</p>
+    </footer>
+
+</body>
+</html>
